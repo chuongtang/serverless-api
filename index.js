@@ -3,6 +3,7 @@ addEventListener('fetch', event => {
 });
 
 // Allow any POST reqeusts with any headers from any origins
+
 const corsHeaders = {
   'Access-Control-Allow-Headers': "*",
   'Access-Control-Allow-Methods': "POST",
