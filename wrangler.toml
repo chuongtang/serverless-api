@@ -1,0 +1,8 @@
+name = "serverless-api"
+type = "javascript"
+
+account_id = "e4f6413d6a17985f7f4eb56c1593e267"
+workers_dev = true
+route = ""
+zone_id = ""
+compatibility_date = "2021-10-25"
