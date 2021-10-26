@@ -40,8 +40,10 @@ async function handleRequest(request) {
 		})
 		.then(response => {
 			console.debug(response);
-      console.log("HERE IS IT", response);
-      return new Response(response.data);
+      // return new Response(response.data);
+      const result = new Response(response.data);
+      console.log("HERE IS IT", result);
+      return result;
 		}).catch(error => {
       
 			console.error(error);
