@@ -5,23 +5,27 @@ import { Card, Container, ListGroup, ListGroupItem, Row, Col, Stack, Table } fro
 
 function App() {
   const [coins, setCoins] = useState('');
+  const [updateTime, setUpdateTime] = useState('');
+
+
+  let results = [];
+
+  async function getData() {
+    const res = await fetch("https://serverless-api.chuongtang.workers.dev");
+    results = await res.json();
+    setCoins(results.data);
+    console.log("Here are they", results.status);
+    setUpdateTime(results.status.timestamp);
+  };
 
   useEffect(() => {
     getData();
-
-    async function getData() {
-      const res = await fetch("https://serverless-api.chuongtang.workers.dev");
-      const results = await res.json();
-      setCoins(results.data);
-      console.log("Here are they", results.data);
-    };
-
   }, []);
 
   return (
     <div>
       <h1>Crypto Market Info</h1>
-      <h3>Last updated on: {coins[0].last_updated}</h3>
+      <h3>Last updated on: {updateTime}</h3>
       {coins && (
         <Container>
               <Table striped bordered hover>
