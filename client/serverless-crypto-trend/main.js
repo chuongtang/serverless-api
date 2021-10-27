@@ -9,13 +9,13 @@ async function fetchApi () {
  
   try {
       const response = await fetch(apiUrl, {
-        method: "GET",
+    
         mode: "no-cors",
       });
-      console.log('respose lines', response);
-      const results = await response.json();
-      console.log('Fresh set of Objs from API: ',results);
-      return results;
+      // console.log('respose lines', response);
+      // const results = await response.json();
+      // console.log('Fresh set of Objs from API: ', results);
+      return await response.json();
       }
   catch (error) { console.log('fetch failed Chuong, check your code', error); }
   };

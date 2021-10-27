@@ -36,12 +36,12 @@ async function handleRequest(request) {
     },
     qs: {
       'start': '1',
-      'limit': '10',
+      'limit': '5000',
       'convert': 'USD'
     },
   };
   const response = await fetch(baseUrl, init);
   const results = await gatherResponse(response);
-  console.log("HEre are they",results);
+  console.log("HEre are they",results.length);
   return new Response(results, init);
 };
