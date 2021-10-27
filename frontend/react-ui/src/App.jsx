@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
+import './App.css';
+import { Card, Container, ListGroup, ListGroupItem, Row, Col, Stack, Table } from 'react-bootstrap'
 
-import './App.css'
 
 function App() {
   const [coins, setCoins] = useState('');
@@ -20,17 +21,35 @@ function App() {
   return (
     <div>
       {coins && (
-        <div className="coin">
-
-          {/* loop over the coins */}
-          {coins.map((coin, index) => (
-            <div key={index}>
-              <h2>{coin.name}</h2>
-              <h3>Symbol{coin.symbol}</h3>
-              <h3>{coin.quote.USD.price}</h3>
-            </div>
-          ))}
-        </div>
+        <Container>
+              <Table striped bordered hover>
+              <thead>
+                <tr>
+                  <th>Current Rank</th>
+                  <th>Symbol</th>
+                  <th>Name</th>
+                  <th>Price(USD)</th>
+                  <th>% Change is last hour</th>
+                  <th>Total Supply</th>
+                  <th>Volume_Change in 24h</th>
+                </tr>
+              </thead>
+              <tbody>
+                {/* loop over the coins */}
+                {coins.map((coin, index) => (
+                <tr key={index}>
+                  <td>{coin.cmc_rank}</td>
+                  <td>{coin.symbol}</td>
+                  <td>{coin.slug}</td>
+                  <td>{coin.quote.USD.price}</td>
+                  <td>{coin.quote.USD.percent_change_1h}</td>
+                  <td>{coin.total_supply}</td>
+                  <td>{coin.quote.USD.volume_change_24h}</td>
+                </tr>
+                 ))}
+              </tbody>
+            </Table>
+        </Container>
       )
       }
     </div>
