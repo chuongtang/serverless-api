@@ -20,6 +20,8 @@ function App() {
 
   return (
     <div>
+      <h1>Crypto Market Info</h1>
+      <h3>Last updated on: {coins[0].last_updated}</h3>
       {coins && (
         <Container>
               <Table striped bordered hover>
