@@ -32,7 +32,7 @@ async function handleRequest(request) {
       'X-CMC_PRO_API_KEY': `${COINAPI_KEY}`,
       'Access-Control-Allow-Headers': "*",
       'Access-Control-Allow-Methods': "*",
-      'Access-Control-Allow-Origin': "*",
+      'Access-Control-Allow-Origin': "https://cryptoprice-e5r.pages.dev/",
     },
     qs: {
       'start': '1',
@@ -42,6 +42,6 @@ async function handleRequest(request) {
   };
   const response = await fetch(baseUrl, init);
   const results = await gatherResponse(response);
-  console.log("HEre are they",results.length);
+  console.log("HEre are they", results.length);
   return new Response(results, init);
 };

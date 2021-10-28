@@ -24,8 +24,15 @@ function App() {
 
   return (
     <div>
-
-      <Navbar bg="primary" variant="dark" expand={false}>
+      {/* <!-- Background animtion--> */}
+      <div className="background">
+        <div className="cube"></div>
+        <div className="cube"></div>
+        <div className="cube"></div>
+        <div className="cube"></div>
+        <div className="cube"></div>
+      </div>
+      <Navbar className="navbarS" bg="primary" variant="dark" expand={false}>
         <Container fluid>
           <Navbar.Brand href="#">CRYPTO CURRENCIES CHART</Navbar.Brand>
           <Navbar.Toggle aria-controls="offcanvasNavbar" />
@@ -59,6 +66,7 @@ function App() {
                 />
                 <Button variant="outline-success">Search</Button>
               </Form>
+              <iframe style={{'height':'25vh'}} loading="eager" title="Preview Crypto detail." src="https://coinmarketcap.com/currencies/uniswap/"></iframe>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
         </Container>
