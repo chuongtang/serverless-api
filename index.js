@@ -5,9 +5,9 @@ addEventListener('fetch', event => {
 
 
 // the handleRequest function needs to return either type Response or Promise<Response>//
-async function handleRequest(request) {
+async function handleRequest() {
   const baseUrl = `https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest`
-  const url = baseUrl + "/static/json";
+
 
   // fetches all active cryptocurrencies & return market values in USD.
 
@@ -42,6 +42,5 @@ async function handleRequest(request) {
   };
   const response = await fetch(baseUrl, init);
   const results = await gatherResponse(response);
-  console.log("HEre are they", results.length);
   return new Response(results, init);
 };

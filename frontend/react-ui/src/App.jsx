@@ -1,21 +1,25 @@
 import { useState, useEffect } from 'react'
 import './App.css';
-import { Navbar, Container, Offcanvas, Nav, NavDropdown, Form, FormControl, Button, Row, Col, Stack, Table } from 'react-bootstrap'
+import Header from './components/Header';
+import Loader from './components/Loader'
+import { Container, Table } from 'react-bootstrap'
 
 
-function App() {
+const App = () => {
   const [coins, setCoins] = useState('');
   const [updateTime, setUpdateTime] = useState('');
+  const [loading, SetLoading] = useState(true);
 
 
   let results = [];
 
   async function getData() {
-    const res = await fetch("https://serverless-api.chuongtang.workers.dev");
+    const res = await fetch("http://127.0.0.1:8787");
     results = await res.json();
     setCoins(results.data);
     console.log("Here are they", results.data);
     setUpdateTime(results.status.timestamp);
+    SetLoading(false)
   };
 
   useEffect(() => {
@@ -24,55 +28,23 @@ function App() {
 
   return (
     <div>
-      {/* <!-- Background animtion--> */}
-      <div className="background">
+
+
+      <div>
+        <Header />
+
+        {coins ? (
+      
+        <div>
+          <div className="background">
         <div className="cube"></div>
         <div className="cube"></div>
         <div className="cube"></div>
         <div className="cube"></div>
         <div className="cube"></div>
       </div>
-      <Navbar className="navbarS" bg="primary" variant="dark" expand={false}>
-        <Container fluid>
-          <Navbar.Brand href="#">CRYPTO CURRENCIES CHART</Navbar.Brand>
-          <Navbar.Toggle aria-controls="offcanvasNavbar" />
-          <Navbar.Offcanvas
-            id="offcanvasNavbar"
-            aria-labelledby="offcanvasNavbarLabel"
-            placement="end"
-          >
-            <Offcanvas.Header closeButton>
-              <Offcanvas.Title id="offcanvasNavbarLabel">Offcanvas</Offcanvas.Title>
-            </Offcanvas.Header>
-            <Offcanvas.Body>
-              <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link href="#action1">Home</Nav.Link>
-                <Nav.Link href="#action2">Link</Nav.Link>
-                <NavDropdown title="Dropdown" id="offcanvasNavbarDropdown">
-                  <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action5">
-                    Something else here
-                  </NavDropdown.Item>
-                </NavDropdown>
-              </Nav>
-              <Form className="d-flex">
-                <FormControl
-                  type="search"
-                  placeholder="Search"
-                  className="me-2"
-                  aria-label="Search"
-                />
-                <Button variant="outline-success">Search</Button>
-              </Form>
-              <iframe style={{'height':'25vh'}} loading="eager" title="Preview Crypto detail." src="https://coinmarketcap.com/currencies/uniswap/"></iframe>
-            </Offcanvas.Body>
-          </Navbar.Offcanvas>
-        </Container>
-      </Navbar>
-      <div className="updTime">Last updated on:  🌠 {updateTime}</div>
-      {coins && (
+      <div>
+        <div className="updTime">Last updated on:  🌠 {updateTime}</div>
         <Container>
           <Table striped bordered hover >
             <thead >
@@ -102,9 +74,12 @@ function App() {
             </tbody>
           </Table>
         </Container>
-      )
-      }
+      </div>
+      </div>
+      ) : (<Loader />)}
     </div>
+    </div >
   )
 }
+
 export default App;
