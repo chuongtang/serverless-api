@@ -15,9 +15,10 @@
   position: absolute;
   top: 80vh;
   left: 45vw;
-  width: 10px;
-  height: 10px;
-  border: solid 1px #ad9ef0;
+  width: 1rem;
+  height: 1rem;
+  border: solid 0.1rem #ad9ef0;
+  border-radius: 40%;
   transform-origin: top left;
   transform: scale(0) rotate(0deg) translate(-50%, -50%);
   animation: cube 10s ease-in forwards infinite;

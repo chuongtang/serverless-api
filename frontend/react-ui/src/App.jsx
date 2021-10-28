@@ -14,7 +14,7 @@ function App() {
     const res = await fetch("https://serverless-api.chuongtang.workers.dev");
     results = await res.json();
     setCoins(results.data);
-    console.log("Here are they", results.status);
+    console.log("Here are they", results.data);
     setUpdateTime(results.status.timestamp);
   };
 
