@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import Loader from './components/Loader'
 import { Container, Table } from 'react-bootstrap'
+import CoinCheck from './components/CoinCheck'
 
 
 const App = () => {
@@ -14,9 +15,11 @@ const App = () => {
   let results = [];
 
   async function getData() {
-    const res = await fetch("https://serverless-api.chuongtang.workers.dev");
+    const res = await fetch("http://127.0.0.1:8787");
+    // const res = await fetch("https://serverless-api.chuongtang.workers.dev");
     results = await res.json();
-    setCoins(results.data);
+    let topCoins = results.data.filter(coin => coin.cmc_rank <= 20);
+    setCoins(topCoins);
     console.log("Here are they", results.data);
     setUpdateTime(results.status.timestamp);
     SetLoading(false)
@@ -49,7 +52,7 @@ const App = () => {
                 <Table striped bordered hover >
                   <thead >
                     <tr>
-                      <th>Current Rank</th>
+                      <th>Rank</th>
                       <th>Symbol</th>
                       <th>Name</th>
                       <th>Price(USD)</th>
@@ -61,6 +64,7 @@ const App = () => {
                   <tbody>
                     {/* loop over the coins */}
                     {coins.map((coin, index) => (
+                
                       <tr key={index}>
                         <td>{coin.cmc_rank}</td>
                         <td>{coin.symbol}</td>
@@ -74,6 +78,7 @@ const App = () => {
                   </tbody>
                 </Table>
               </Container>
+              <CoinCheck />
             </div>
           </div>
         ) : (<Loader />)}

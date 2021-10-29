@@ -122,3 +122,14 @@
 .logo{
   max-width: 1.5rem;
 }
+
+.wrapped-iframe {
+  box-sizing: border-box; 
+  height: 70%; 
+  width: auto;
+  margin-right: 0.5rem 0.5rem;
+}
+
+#offcanvasNavbarDropdown{
+  margin-top: 1vh;
+}
