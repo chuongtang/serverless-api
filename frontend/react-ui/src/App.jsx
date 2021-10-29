@@ -20,7 +20,7 @@ const App = () => {
     results = await res.json();
     let topCoins = results.data.filter(coin => coin.cmc_rank <= 20);
     setCoins(topCoins);
-    console.log("Here are they", results.data);
+    // console.log("Here are they", results.data);
     setUpdateTime(results.status.timestamp);
     SetLoading(false)
   };
