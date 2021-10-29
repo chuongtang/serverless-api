@@ -49,7 +49,7 @@ const App = () => {
             <div>
               <div className="updTime">Last updated on:  🌠 {updateTime}</div>
               <Container>
-                <Table striped bordered hover variant="dark">
+                <Table striped bordered hover>
                   <thead >
                     <tr>
                       <th>Rank</th>

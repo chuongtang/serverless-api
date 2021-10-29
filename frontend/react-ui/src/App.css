@@ -3,14 +3,7 @@
   margin: 1rem;
   
 }
-body{
-  background-image: linear-gradient(to right, rgba(0,48,73,1) 0%, rgba(252,252,252,1) 100%);
-  background-size: auto;
-  background-position: 0% 0%;
-  background-repeat: repeat;
-  background-color: rgba(0,0,0,0);
-  resize: none;
-}
+
 .updTime{
   float: right;
   font-size: 0.75rem;
