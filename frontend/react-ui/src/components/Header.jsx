@@ -1,5 +1,5 @@
 import { Navbar, Container, Offcanvas, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap'
-import Tlc from '../images/TLC.png'
+import Tlc from '../images/Tlc.png'
 import Vite from '../images/Vite.png'
 import Workers from '../images/Workers.png'
 import ReactBS from '../images/react-bootstrap.png'
