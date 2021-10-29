@@ -15,6 +15,7 @@ const App = () => {
 
   async function getData() {
 
+    // const res = await fetch("http://127.0.0.1:8787");
     const res = await fetch("https://serverless-api.chuongtang.workers.dev");
     results = await res.json();
     let topCoins = results.data.filter(coin => coin.cmc_rank <= 20);
@@ -48,7 +49,7 @@ const App = () => {
             <div>
               <div className="updTime">Last updated on:  🌠 {updateTime}</div>
               <Container>
-                <Table striped bordered hover >
+                <Table striped bordered hover variant="dark">
                   <thead >
                     <tr>
                       <th>Rank</th>
