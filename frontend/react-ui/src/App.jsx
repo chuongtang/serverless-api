@@ -58,7 +58,7 @@ const App = () => {
                       <th>Symbol</th>
                       <th>Name</th>
                       <th>Price(USD)</th>
-                      <th>% Change is last hour</th>
+                      <th>% Change in last hour</th>
                       <th>Total Supply</th>
                       <th>Volume_Change in 24h</th>
                     </tr>
