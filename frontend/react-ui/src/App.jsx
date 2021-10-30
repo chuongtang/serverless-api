@@ -17,8 +17,8 @@ const App = () => {
 
   async function getData() {
 
-    const res = await fetch("http://127.0.0.1:8787");
-    // const res = await fetch("https://serverless-api.chuongtang.workers.dev");
+    // const res = await fetch("http://127.0.0.1:8787");
+    const res = await fetch("https://serverless-api.chuongtang.workers.dev");
     results = await res.json();
     let topCoins = results.data.filter(coin => coin.cmc_rank <= 20);
     setCoins(topCoins);
@@ -69,7 +69,6 @@ const App = () => {
 
                       <tr key={index}>
                         <td>{coin.cmc_rank} <img src={`https://crypto-analysis.pages.dev/logos/${coin.symbol}-LOGO.svg`} className="logo" alt={`${coin.slug}-Logo`}/> </td>
-                        {/* <td>{coin.symbol}</td> */}
                         <td>{coin.symbol}</td>
                         <td>{coin.slug}</td>
                         <td>{coin.quote.USD.price}</td>
