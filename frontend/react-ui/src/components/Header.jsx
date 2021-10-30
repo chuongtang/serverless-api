@@ -5,6 +5,7 @@ import Workers from '../images/Workers.png'
 import ReactBS from '../images/react-bootstrap.png'
 import CoinMarket from '../images/CoinMarket.png'
 import Tradingview from '../images/Tradingview.png'
+import Anilogo from '../images/grid.svg'
 
 const Header = () => {
 
@@ -12,7 +13,7 @@ const Header = () => {
 
     <Navbar style={{"background":"#003049"}} variant="dark" expand={false}>
       <Container fluid>
-        <Navbar.Brand href="#">TOP 20 CURRENCIES ON CRYPTO MARKET</Navbar.Brand>
+        <Navbar.Brand href="#">TOP 20 CURRENCIES ON CRYPTO MARKET <img src={Anilogo} style={{"max-height": "2rem"}} alt="animation logo"/></Navbar.Brand>
         <Navbar.Toggle aria-controls="offcanvasNavbar" />
         <Navbar.Offcanvas
           id="offcanvasNavbar"

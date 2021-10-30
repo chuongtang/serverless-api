@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react'
 import './App.css';
 import Header from './components/Header';
 import Loader from './components/Loader'
-import { Container, Table } from 'react-bootstrap'
+import { Container, Table } from 'react-bootstrap';
+import CloudUpdate from './images/cloud.svg'
 
 
 const App = () => {
@@ -33,8 +34,6 @@ const App = () => {
 
   return (
     <div>
-
-
       <div>
         <Header />
 
@@ -49,7 +48,8 @@ const App = () => {
               <div className="cube"></div>
             </div>
             <div>
-              <div className="updTime">Last updated on:  🌠 {updateTime}</div>
+              <div className="updTime">Last updated <img src={CloudUpdate} className="logo" alt="Cloud Update"/>N {updateTime}</div>
+
               <Container>
                 <Table striped bordered hover>
                   <thead >
@@ -68,7 +68,7 @@ const App = () => {
                     {coins.map((coin, index) => (
 
                       <tr key={index}>
-                        <td>{coin.cmc_rank} <img src={`https://crypto-analysis.pages.dev/logos/${coin.symbol}-LOGO.svg`} className="logo" alt={`${coin.slug}-Logo`}/> </td>
+                        <td>{coin.cmc_rank} <img src={`https://crypto-analysis.pages.dev/logos/${coin.symbol}-LOGO.svg`} className="logo" alt={`${coin.slug}-Logo`} /> </td>
                         <td>{coin.symbol}</td>
                         <td>{coin.slug}</td>
                         <td>{coin.quote.USD.price}</td>
