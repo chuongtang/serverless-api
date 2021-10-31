@@ -11,9 +11,9 @@ const Header = () => {
 
   return (
 
-    <Navbar style={{"background":"#003049"}} variant="dark" expand={false}>
+    <Navbar style={{ "background": "#003049" }} variant="dark" expand={false}>
       <Container fluid>
-        <Navbar.Brand href="#">TOP 20 CURRENCIES ON CRYPTO MARKET <img src={Anilogo} style={{"max-height": "2rem"}} alt="animation logo"/></Navbar.Brand>
+        <Navbar.Brand href="#">TOP 20 CURRENCIES ON CRYPTO MARKET <img src={Anilogo} style={{ "maxHeight": "2rem" }} alt="animation logo" /></Navbar.Brand>
         <Navbar.Toggle aria-controls="offcanvasNavbar" />
         <Navbar.Offcanvas
           id="offcanvasNavbar"
@@ -37,7 +37,7 @@ const Header = () => {
                 <NavDropdown.Item><img src={Tradingview} alt="Tradingview Logo" className="logo" /> <a href={'https://www.tradingview.com/markets/cryptocurrencies/prices-all/'} target="_blank" rel="noopener noreferrer">Tradingview </a></NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action5">
-                and..by  <img src={Tlc} alt="Chuong Favicon" className="logo" /> , <a href={'https://chuongtang.github.io/aboutme'} target="_blank" rel="noopener noreferrer">a blockchain explorer</a>
+                  and..by  <img src={Tlc} alt="Chuong Favicon" className="logo" /> , <a href={'https://chuongtang.github.io/aboutme'} target="_blank" rel="noopener noreferrer">a blockchain explorer</a>
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
