@@ -6,6 +6,7 @@ import ReactBS from '../images/react-bootstrap.png'
 import CoinMarket from '../images/CoinMarket.png'
 import Tradingview from '../images/Tradingview.png'
 import Anilogo from '../images/grid.svg'
+import Device from '../images/device.svg'
 
 const Header = () => {
 
@@ -41,6 +42,21 @@ const Header = () => {
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
+          </Offcanvas.Body>
+        </Navbar.Offcanvas>
+      </Container>
+      <Container fluid>
+
+        <Navbar.Offcanvas
+          id="offcanvasNavbar2"
+          aria-labelledby="offcanvasNavbarLabel"
+          placement="start"
+        >
+          <Offcanvas.Header closeButton>
+            <Offcanvas.Title id="offcanvasNavbarLabel">What's hot on News?  <img src={Device} style={{ "maxHeight": "2rem" }} alt="animation device" /></Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body>
+            <iframe scrolling="yes" className="offcanvasNews" allowtransparency="true" frameBorder="0" src="https://crypto-analysis.pages.dev/hotOnTheNews.html"></iframe>
           </Offcanvas.Body>
         </Navbar.Offcanvas>
       </Container>

@@ -135,3 +135,12 @@
 #offcanvasNavbarDropdown{
   margin-top: 1vh;
 }
+.offcanvasNews{
+  height: 100%;
+  width: 102%;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  background: linear-gradient(180deg,#fdf9f9,#011f1f);
+  background-size: 120% 120%;
+}
