@@ -2,9 +2,8 @@ import { useState, useEffect } from 'react'
 import './App.css';
 import Header from './components/Header';
 import Loader from './components/Loader'
-import Chart from './components/Chart'
 import Anilogo from './images/grid.svg'
-import { Container, Table, Dropdown, Form, Button } from 'react-bootstrap';
+import { Container, Table, CloseButton, Form, Button, Col, Row } from 'react-bootstrap';
 import CloudUpdate from './images/cloud.svg'
 
 
@@ -56,26 +55,39 @@ const App = () => {
         <Header />
         {coins ? (
           <>
-            <Form onSubmit={submitHandler}>
-              <Form.Group className="mb-3" controlId='symbol'>
-                <Form.Label>Analytics Charting tool</Form.Label>
-                <Form.Control
-                  as='select'
-                  value={symbol}
-                  onChange={(e) => setSymbol(e.target.value)}
-                >
-                  <option value="">Select Currency ⇩</option>
-                  {coins.map((element, index) => (
-                    <option key={index} value={element.symbol}>{element.slug.toUpperCase()}</option>
+            <Container className="chartingTool">
+              <Form onSubmit={submitHandler}>
+                <Row>
+                  <Col>
+                    <Form.Group className="mb-1" controlId='symbol'>
+                      <Form.Text size="lg" >Analytics Charting tool</Form.Text>
+                      <Form.Control
+                        as='select'
+                        value={symbol}
+                        onChange={(e) => setSymbol(e.target.value)}
+                      >
+                        <option value="">Select Currency ⇩</option>
+                        {coins.map((element, index) => (
+                          <option key={index} value={element.symbol}>{element.slug.toUpperCase()}</option>
+                        ))}
+                      </Form.Control>
+                    </Form.Group>
+                  </Col>
 
-                  ))}
-                </Form.Control>
-              </Form.Group>
-              <Button type='submit' variant='primary'>
-                View Charting tool
-              </Button>
-            </Form>
-            {chartUrl !== "" && <iframe className="chart" src={chartUrl} />}
+                  <Col>
+                    <Button type='submit' variant='warning'>
+                      View Charting tool
+                    </Button>
+                  </Col>
+                </Row>
+              </Form>
+            </Container>
+            {chartUrl !== "" &&
+              (<div className="mb-2">
+                <CloseButton style={{ "float": "right" }} onClick={() => { setChartUrl("") }} aria-label="Hide" />
+                <iframe className="chart" src={chartUrl} />
+              </div>)
+            }
             <div>
               <div className="background">
                 <div className="cube"></div>
@@ -89,8 +101,8 @@ const App = () => {
 
                 <Container>
                   <Table striped bordered hover>
-                    <thead >
-                      <tr>
+                    <thead  >
+                      <tr >
                         <th>Rank</th>
                         <th>Symbol</th>
                         <th>Name</th>
