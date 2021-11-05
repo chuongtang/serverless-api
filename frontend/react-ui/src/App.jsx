@@ -4,7 +4,8 @@ import Header from './components/Header';
 import Loader from './components/Loader'
 import Anilogo from './images/grid.svg'
 import { Container, Table, CloseButton, Form, Button, Col, Row } from 'react-bootstrap';
-import CloudUpdate from './images/cloud.svg'
+import CloudUpdate from './images/cloud.svg';
+import DevData from "./components/DevData.json";
 
 
 const App = () => {
@@ -38,15 +39,10 @@ const App = () => {
     setChartUrl(`https://serverless-endpoints.chuongtang.workers.dev/charts/${symbol}-chart`)
   }
 
-  const showAChart = (event) => {
-    // event.preventDefault();
-    console.log(event);
-    setChartUrl = `https://serverless-endpoints.chuongtang.workers.dev/charts/${event}-chart`
-    setShowChart(true)
-    console.log("showchart has clicked", event);
-  }
+ 
   useEffect(() => {
-    getData();
+    // getData();
+    setCoins(DevData);
   }, []);
 
   return (
@@ -79,7 +75,7 @@ const App = () => {
 
                   <Col>
                     <Button type='submit' variant='secondary'>
-                      Click to run Analysis Chart
+                      Click to run Analysis Tool
                     </Button>
                   </Col>
                 </Row>
@@ -104,7 +100,7 @@ const App = () => {
 
                 <Container className="chartContainer">
                   <Table striped bordered hover>
-                    <thead  >
+                    <thead >
                       <tr >
                         <th>Rank</th>
                         <th>Symbol</th>
@@ -115,7 +111,7 @@ const App = () => {
                         <th>Volume_Change in 24h</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody style={{'overflow':'scroll'}}>
                       {/* loop over the coins */}
                       {coins.map((coin, index) => (
 

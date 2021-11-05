@@ -43,5 +43,6 @@ async function handleRequest() {
   };
   const response = await fetch(baseUrl, init);
   const results = await gatherResponse(response);
+  console.log(results);
   return new Response(results, init);
 };
