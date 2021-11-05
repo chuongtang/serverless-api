@@ -59,8 +59,11 @@ const App = () => {
               <Form onSubmit={submitHandler}>
                 <Row>
                   <Col>
+                  <Button variant="outline-light">Performance Chart with Analysis Tools  <img src={Anilogo} style={{ "maxHeight": "2rem" }} alt="animation logo" /> </Button>
+                  </Col>
+                  <Col>
                     <Form.Group className="mb-1" controlId='symbol'>
-                      <Form.Text size="lg" >Analytics Charting tool</Form.Text>
+                      <Form.Text size="lg" ></Form.Text>
                       <Form.Control
                         as='select'
                         value={symbol}
@@ -75,8 +78,8 @@ const App = () => {
                   </Col>
 
                   <Col>
-                    <Button type='submit' variant='warning'>
-                      View Charting tool
+                    <Button type='submit' variant='secondary'>
+                      Click to run Analysis Chart
                     </Button>
                   </Col>
                 </Row>
@@ -99,7 +102,7 @@ const App = () => {
               <div>
                 <div className="updTime">Last updated <img src={CloudUpdate} className="logo" alt="Cloud Update" /> : {updateTime}</div>
 
-                <Container>
+                <Container className="chartContainer">
                   <Table striped bordered hover>
                     <thead  >
                       <tr >

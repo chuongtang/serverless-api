@@ -150,10 +150,16 @@
   height: 90vh;
 }
 .chartingTool{
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   margin: 1rem 0;
   padding: 0.5rem;
-  background: #15616d;
-  box-shadow:  20px 20px 60px #d9c9b2,
-               -20px -20px 60px #fffff0;
+  background: #98c1d9;
+  box-shadow:  6px 6px 11px #3c546f,
+              -6px -6px 11px #46607f;
+}
+.chartContainer{
+  border-radius: 0.5rem;
+  background: #e0fbfc;
+  box-shadow:  6px 6px 11px #d0d1ce,
+              -6px -6px 11px #f0f1ec;
 }

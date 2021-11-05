@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
 
-    <Navbar sticky="top" style={{ "background": "#001524" }} variant="dark" expand={false}>
+    <Navbar sticky="top" style={{ "background": "#3d5a80" }} variant="dark" expand={false}>
       <Container fluid>
         <Navbar.Brand href="#">TOP 20 CURRENCIES ON CRYPTO MARKET </Navbar.Brand>
         <Navbar.Toggle aria-controls="offcanvasNavbar" />
