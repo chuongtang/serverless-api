@@ -144,3 +144,8 @@
   background: linear-gradient(180deg,#fdf9f9,#011f1f);
   background-size: 120% 120%;
 }
+
+.chart{
+  width: 100%;
+  height: 70vh;
+}

@@ -1,20 +1,22 @@
-import { Navbar, Container, Offcanvas, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap'
+import { Navbar, Container, Offcanvas, Nav, NavDropdown, Popover , OverlayTrigger , Button } from 'react-bootstrap'
 import Tlc from '../images/Tlc.png'
 import Vite from '../images/Vite.png'
 import Workers from '../images/Workers.png'
 import ReactBS from '../images/react-bootstrap.png'
 import CoinMarket from '../images/CoinMarket.png'
 import Tradingview from '../images/Tradingview.png'
-import Anilogo from '../images/grid.svg'
+
 import Device from '../images/device.svg'
 
 const Header = () => {
+
+  
 
   return (
 
     <Navbar style={{ "background": "#003049" }} variant="dark" expand={false}>
       <Container fluid>
-        <Navbar.Brand href="#">TOP 20 CURRENCIES ON CRYPTO MARKET <img src={Anilogo} style={{ "maxHeight": "2rem" }} alt="animation logo" /></Navbar.Brand>
+        <Navbar.Brand href="#">TOP 20 CURRENCIES ON CRYPTO MARKET </Navbar.Brand>
         <Navbar.Toggle aria-controls="offcanvasNavbar" />
         <Navbar.Offcanvas
           id="offcanvasNavbar"

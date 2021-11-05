@@ -33,7 +33,7 @@ async function handleRequest() {
       'Access-Control-Allow-Headers': "*",
       'Access-Control-Allow-Methods': "*",
       'Access-Control-Allow-Origin': "https://cryptoprice-e5r.pages.dev",
-      // 'Access-Control-Allow-Origin': "http://localhost:3000",
+      'Access-Control-Allow-Origin': "http://localhost:3000",
     },
     qs: {
       'start': '1',
