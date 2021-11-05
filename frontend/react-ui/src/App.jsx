@@ -14,6 +14,7 @@ const App = () => {
   const [updateTime, setUpdateTime] = useState('');
   const [loading, SetLoading] = useState(true);
   const [showChart, setShowChart] = useState(false);
+  let [chartUrl, setChartUrl] = useState('')
 
 
 
@@ -31,6 +32,11 @@ const App = () => {
     SetLoading(false)
   };
 
+  const showAChart = (symbol) => {
+    setChartUrl = `https://serverless-endpoints.chuongtang.workers.dev/charts/${symbol}-chart`
+    setShowChart(true)
+    console.log("showchart has clicked", symbol);
+  }
   useEffect(() => {
     getData();
   }, []);
@@ -52,11 +58,13 @@ const App = () => {
               <Dropdown.Menu variant="dark">
                 {coins.map((element, index) => (
 
-                  <Dropdown.Item href="#/action-2"  key={index}>{element.slug}</Dropdown.Item>
+                  <Dropdown.Item eventKey={element.symbol} onSelect={() => {showAChart(element.symbol)}}  key={index}>{element.slug}</Dropdown.Item>
 
                 ))}
               </Dropdown.Menu>
             </Dropdown>
+            {chartUrl !== ""&& <iframe className="chart" src={chartUrl} />}
+            
 
             <div>
               <div className="background">
