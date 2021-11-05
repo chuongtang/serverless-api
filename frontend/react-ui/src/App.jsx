@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Loader from './components/Loader'
 import Chart from './components/Chart'
 import Anilogo from './images/grid.svg'
-import { Container, Table, Dropdown } from 'react-bootstrap';
+import { Container, Table, Dropdown, Form, Button } from 'react-bootstrap';
 import CloudUpdate from './images/cloud.svg'
 
 
@@ -14,7 +14,8 @@ const App = () => {
   const [updateTime, setUpdateTime] = useState('');
   const [loading, SetLoading] = useState(true);
   const [showChart, setShowChart] = useState(false);
-  let [chartUrl, setChartUrl] = useState('')
+  const [symbol, setSymbol] = useState("")
+  const [chartUrl, setChartUrl] = useState('');
 
 
 
@@ -32,10 +33,18 @@ const App = () => {
     SetLoading(false)
   };
 
-  const showAChart = (symbol) => {
-    setChartUrl = `https://serverless-endpoints.chuongtang.workers.dev/charts/${symbol}-chart`
+  const submitHandler = (e) => {
+    e.preventDefault();
+    console.log("handleFormSubmited");
+
+  }
+
+  const showAChart = (event) => {
+    // event.preventDefault();
+    console.log(event);
+    setChartUrl = `https://serverless-endpoints.chuongtang.workers.dev/charts/${event}-chart`
     setShowChart(true)
-    console.log("showchart has clicked", symbol);
+    console.log("showchart has clicked", event);
   }
   useEffect(() => {
     getData();
@@ -45,27 +54,28 @@ const App = () => {
     <div>
       <div>
         <Header />
-        {/* <Chart /> */}
         {coins ? (
           <>
-            {/* chart selector */}
+            <Form onSubmit={submitHandler}>
+              <Form.Group controlId='rating'>
+                <Form.Label>Analytics Charting tool</Form.Label>
+                <Form.Control
+                  as='select'
+                  value={symbol}
+                  onChange={(e) => setSymbol(e.target.value)}
+                >
+                  <option value="">Select Currency..</option>
+                  {coins.map((element, index) => (
+                    <option key={index} value={element.symbol}>{element.slug}</option>
 
-            <Dropdown>
-              <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">
-              <img src={Anilogo} style={{ "maxHeight": "2rem" }} alt="animation logo" />Analytics charting tool 
-              </Dropdown.Toggle>
-
-              <Dropdown.Menu variant="dark">
-                {coins.map((element, index) => (
-
-                  <Dropdown.Item eventKey={element.symbol} onSelect={() => {showAChart(element.symbol)}}  key={index}>{element.slug}</Dropdown.Item>
-
-                ))}
-              </Dropdown.Menu>
-            </Dropdown>
-            {chartUrl !== ""&& <iframe className="chart" src={chartUrl} />}
-            
-
+                  ))}
+                </Form.Control>
+              </Form.Group>
+              <Button type='submit' variant='primary'>
+                View Charting tool
+              </Button>
+            </Form>
+            {chartUrl !== "" && <iframe className="chart" src={chartUrl} />}
             <div>
               <div className="background">
                 <div className="cube"></div>
