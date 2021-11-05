@@ -36,7 +36,7 @@ const App = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     console.log("handleFormSubmited");
-
+    setChartUrl(`https://serverless-endpoints.chuongtang.workers.dev/charts/${symbol}-chart`)
   }
 
   const showAChart = (event) => {
@@ -57,16 +57,16 @@ const App = () => {
         {coins ? (
           <>
             <Form onSubmit={submitHandler}>
-              <Form.Group controlId='rating'>
+              <Form.Group className="mb-3" controlId='symbol'>
                 <Form.Label>Analytics Charting tool</Form.Label>
                 <Form.Control
                   as='select'
                   value={symbol}
                   onChange={(e) => setSymbol(e.target.value)}
                 >
-                  <option value="">Select Currency..</option>
+                  <option value="">Select Currency ⇩</option>
                   {coins.map((element, index) => (
-                    <option key={index} value={element.symbol}>{element.slug}</option>
+                    <option key={index} value={element.symbol}>{element.slug.toUpperCase()}</option>
 
                   ))}
                 </Form.Control>
