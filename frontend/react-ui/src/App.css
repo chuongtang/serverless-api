@@ -154,6 +154,7 @@
   margin: 1rem 0;
   padding: 0.5rem;
   background: #98c1d9;
+  justify-content: center;
   box-shadow:  6px 6px 11px #3c546f,
               -6px -6px 11px #46607f;
 }

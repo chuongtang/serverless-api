@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import Loader from './components/Loader'
 import Anilogo from './images/grid.svg'
-import { Container, Table, CloseButton, Form, Button, Col, Row } from 'react-bootstrap';
+import { Container, Table, CloseButton, Form, Button, Col, Row, Alert } from 'react-bootstrap';
 import CloudUpdate from './images/cloud.svg';
 import DevData from "./components/DevData.json";
 
@@ -39,10 +39,10 @@ const App = () => {
     setChartUrl(`https://serverless-endpoints.chuongtang.workers.dev/charts/${symbol}-chart`)
   }
 
- 
+
   useEffect(() => {
-    getData();
-    // setCoins(DevData);
+    // getData();
+    setCoins(DevData);
   }, []);
 
   return (
@@ -53,19 +53,16 @@ const App = () => {
           <>
             <Container className="chartingTool">
               <Form onSubmit={submitHandler}>
-                <Row>
-                  <Col>
-                  <Button variant="outline-light">Performance Chart with Analysis Tools  <img src={Anilogo} style={{ "maxHeight": "2rem" }} alt="animation logo" /> </Button>
-                  </Col>
-                  <Col>
-                    <Form.Group className="mb-1" controlId='symbol'>
+                <Row className="justify-content-md-center">
+                  <Col md="auto" >
+                    <Form.Group  controlId='symbol'>
                       <Form.Text size="lg" ></Form.Text>
                       <Form.Control
                         as='select'
                         value={symbol}
                         onChange={(e) => setSymbol(e.target.value)}
                       >
-                        <option value="">Select Currency ⇩</option>
+                        <option value="">Select Currency for deep analysis 🢛</option>
                         {coins.map((element, index) => (
                           <option key={index} value={element.symbol}>{element.slug.toUpperCase()}</option>
                         ))}
@@ -73,9 +70,9 @@ const App = () => {
                     </Form.Group>
                   </Col>
 
-                  <Col>
+                  <Col md="auto">
                     <Button type='submit' variant='secondary'>
-                      Click to run Analysis Tool
+                      Click to run Analysis Tool <img src={Anilogo} style={{ "maxHeight": "2rem" }} alt="animation logo" />
                     </Button>
                   </Col>
                 </Row>
@@ -111,7 +108,7 @@ const App = () => {
                         <th>Volume_Change in 24h</th>
                       </tr>
                     </thead>
-                    <tbody style={{'overflow':'scroll'}}>
+                    <tbody style={{ 'overflow': 'scroll' }}>
                       {/* loop over the coins */}
                       {coins.map((coin, index) => (
 
