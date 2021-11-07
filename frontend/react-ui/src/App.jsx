@@ -41,8 +41,8 @@ const App = () => {
 
 
   useEffect(() => {
-    // getData();
-    setCoins(DevData);
+    getData();
+    // setCoins(DevData);
   }, []);
 
   return (
