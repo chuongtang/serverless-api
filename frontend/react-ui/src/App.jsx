@@ -6,6 +6,7 @@ import Anilogo from './images/grid.svg'
 import { Container, Table, CloseButton, Form, Button, Col, Row, Alert } from 'react-bootstrap';
 import CloudUpdate from './images/cloud.svg';
 import DevData from "./components/DevData.json";
+import HelloMsg from "./components/HelloMsg"
 
 
 const App = () => {
@@ -18,13 +19,10 @@ const App = () => {
   const [chartUrl, setChartUrl] = useState('');
 
 
-
-
   let results = [];
 
   async function getData() {
 
-    // const res = await fetch("http://127.0.0.1:8787");
     const res = await fetch("https://serverless-api.chuongtang.workers.dev");
     results = await res.json();
     let topCoins = results.data.filter(coin => coin.cmc_rank <= 20);
@@ -47,6 +45,7 @@ const App = () => {
 
   return (
     <div>
+      <HelloMsg />
       <div>
         <Header />
         {coins ? (
