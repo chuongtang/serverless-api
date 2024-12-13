@@ -32,8 +32,9 @@ async function handleRequest() {
       'X-CMC_PRO_API_KEY': `${COINAPI_KEY}`,
       'Access-Control-Allow-Headers': "*",
       'Access-Control-Allow-Methods': "*",
-      'Access-Control-Allow-Origin': "https://cryptoprice-e5r.pages.dev",
-      // 'Access-Control-Allow-Origin': "http://localhost:3000",
+      'Access-Control-Allow-Origin': "*",
+      // 'Access-Control-Allow-Origin': "https://infocryp.win",
+      // 'Access-Control-Allow-Origin': "https://cryptoprice-e5r.pages.dev",
     },
     qs: {
       'start': '1',

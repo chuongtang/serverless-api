@@ -29,6 +29,7 @@ const App = () => {
     setCoins(topCoins);
     setUpdateTime(results.status.timestamp);
     SetLoading(false)
+    console.table(coins)
   };
 
   const submitHandler = (e) => {
@@ -71,7 +72,7 @@ const App = () => {
 
                   <Col md="auto">
                     <Button type='submit' variant='secondary'>
-                      Click to run Analysis Tool <img src={Anilogo} style={{ "maxHeight": "2rem" }} alt="animation logo" />
+                      Click to run Analysis Tool <img src={Anilogo} style={{ "maxHeight": "2rem", }} alt="animation logo" />
                     </Button>
                   </Col>
                 </Row>
@@ -95,30 +96,29 @@ const App = () => {
                 <div className="updTime">Last updated <img src={CloudUpdate} className="logo" alt="Cloud Update" /> : {updateTime}</div>
 
                 <Container className="chartContainer">
-                  <Table striped bordered hover>
+                  <Table responsive striped bordered hover size="sm">
                     <thead >
                       <tr >
                         <th>Rank</th>
                         <th>Symbol</th>
                         <th>Name</th>
                         <th>Price(USD)</th>
-                        <th>% Change in last hour</th>
-                        <th>Total Supply</th>
+                        <th>% Change \n last hour</th>
+                        {/* <th>Total Supply</th> */}
                         <th>Volume_Change in 24h</th>
                       </tr>
                     </thead>
                     <tbody style={{ 'overflow': 'scroll' }}>
                       {/* loop over the coins */}
                       {coins.map((coin, index) => (
-
                         <tr key={index}>
                           <td>{coin.cmc_rank} <img src={`https://crypto-analysis.pages.dev/logos/${coin.symbol}-LOGO.svg`} className="logo" alt={`${coin.slug}-Logo`} /> </td>
                           <td>{coin.symbol}</td>
                           <td>{coin.slug}</td>
-                          <td>{coin.quote.USD.price}</td>
-                          <td>{coin.quote.USD.percent_change_1h}</td>
-                          <td>{coin.total_supply}</td>
-                          <td>{coin.quote.USD.volume_change_24h}</td>
+                          <td>{coin.quote.USD.price.toFixed(3)}</td>
+                          <td>{coin.quote.USD.percent_change_1h.toFixed(3)}</td>
+                          {/* <td>{coin.total_supply}</td> */}
+                          <td>{coin.quote.USD.volume_change_24h.toFixed(3)}</td>
                         </tr>
                       ))}
                     </tbody>
