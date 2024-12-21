@@ -43,21 +43,21 @@ const page = () => {
       <div className="overflow-x-auto ">
         <p className='italic text-sm'>Last updated on.....{updateTime}</p>
         <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm table-auto">
-          <thead>
+          <thead className="border font-medium dark:border-white/10">
             <tr>
-              <th className="whitespace-nowrap p-2 font-bold text-gray-900">Rank</th>
-              <th className="whitespace-nowrap p-2 font-bold text-gray-900">Symbol</th>
-              <th className="whitespace-nowrap p-2 font-bold text-gray-900">Name</th>
-              <th className="whitespace-nowrap p-2 font-bold text-gray-900">Price(USD)</th>
-              <th className="whitespace-nowrap p-2 font-bold text-gray-900">%Change last hour</th>
-              <th className="whitespace-nowrap p-2 font-bold text-gray-900">Volume change last 24hr</th>
-              <th className="px-4 py-2"></th>
+              <th className="border-e whitespace-nowrap p-2 font-bold text-gray-900">Rank</th>
+              <th className="border-e  whitespace-nowrap p-2 font-bold text-gray-900">Symbol</th>
+              <th className="border-e  whitespace-nowrap p-2 font-bold text-gray-900">Name</th>
+              <th className="border-e  whitespace-nowrap p-2 font-bold text-gray-900">Price<br/>(USD)</th>
+              <th className="border-e  whitespace-nowrap p-2 font-bold text-gray-900">%Change <br/>last hour</th>
+              <th className="border-e  whitespace-nowrap p-2 font-bold text-gray-900">Volume change <br/> last 24hr</th>
+              {/* <th className="px-4 py-2"></th> */}
             </tr>
           </thead>
           {coins.map((coin, index) => (
             <tbody key={index} className="divide-y divide-gray-200">
-              <tr className="place-items-center">
-                <td className="whitespace-nowrap flex px-4 py-2 font-medium text-gray-900">{coin.cmc_rank}
+              <tr className="place-items-center border-b  dark:border-white/10">
+                <td className="border-e whitespace-nowrap flex px-4 py-2 font-medium text-gray-900">{coin.cmc_rank}
                   <Image
                     src={`https://crypto-analysis.pages.dev/logos/${coin.symbol}-LOGO.svg`}
                     className="ml-2"
@@ -65,19 +65,19 @@ const page = () => {
                     width={20}
                     height={20} />
                 </td>
-                <td className="whitespace-nowrap p-2 text-gray-700">{coin.symbol}</td>
-                <td className="whitespace-nowrap p-2 text-gray-700">{coin.slug}</td>
-                <td className="whitespace-nowrap p-2 text-gray-700">{coin.quote.USD.price.toFixed(3)}</td>
-                <td className="whitespace-nowrap p-2 text-gray-700">{coin.quote.USD.percent_change_1h.toFixed(3)}</td>
-                <td className="whitespace-nowrap p-2 text-gray-700">{coin.quote.USD.volume_change_24h.toFixed(3)}</td>
-                <td className="whitespace-nowrap p-2" >
-                  {/* <a
+                <td className="border-e  whitespace-nowrap p-2 text-gray-700">{coin.symbol}</td>
+                <td className="border-e  whitespace-nowrap p-2 text-gray-700">{coin.slug}</td>
+                <td className="border-e  whitespace-nowrap p-2 text-gray-700">{coin.quote.USD.price.toFixed(3)}</td>
+                <td className="border-e  whitespace-nowrap p-2 text-gray-700">{coin.quote.USD.percent_change_1h.toFixed(3)}</td>
+                <td className="border-e  whitespace-nowrap p-2 text-gray-700">{coin.quote.USD.volume_change_24h.toFixed(3)}</td>
+                {/* <td className="whitespace-nowrap p-2" >
+                  <a
                     href="#"
                     className="inline-block rounded bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700"
                   >
                     View
-                  </a> */}
-                </td>
+                  </a>
+                </td> */}
               </tr>
             </tbody>
           ))}
