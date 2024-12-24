@@ -39,8 +39,9 @@ const page = () => {
   }, []);
 
   return (
-    
-      <div className="overflow-x-auto ">
+    <div className="overflow-x-auto ">
+        
+         
         <p className='italic text-sm'>Last updated on.....{updateTime}</p>
         <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm table-auto">
           <thead className="border font-medium dark:border-white/10">
@@ -82,8 +83,10 @@ const page = () => {
             </tbody>
           ))}
         </table>
+  
+     
       </div>
-  )
+                )
 }
 
 export default page
