@@ -22,7 +22,7 @@ export default function HelloMsg() {
           >
             <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
               <div className="sm:flex sm:items-start">
-                <iframe width="100%" height="100" src="https://serverless-endpoints.chuongtang.workers.dev/welcome" />
+                <iframe className="w-full" src="https://serverless-endpoints.chuongtang.workers.dev/welcome" />
                 <div className="flex absolute top-1/2 right-1/2 -z-1">
                   <div className="h-2 w-2 mx-2 bg-gray-300 rounded-full animate-ping [animation-delay:-0.3s]"></div>
                   <div className="h-2 w-2 mx-2 bg-gray-300 rounded-full animate-ping [animation-delay:-0.15s]"></div>
