@@ -17,7 +17,7 @@ export default function Home() {
         />
         <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <ol className="mb-2">
-            Thanks for visiting this{" "}
+            A simple, basic but{" "}
             <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
               informative page
             </code>
@@ -43,7 +43,7 @@ export default function Home() {
             Top trending Crypto
           </Link>
           <Link
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44 gap-2"
+            className="rounded-full border border-solid border-neon-carrot-900 dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44 gap-2"
             href="/news"
             target="_blank"
             rel="noopener noreferrer"
@@ -62,7 +62,7 @@ export default function Home() {
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
         <Link
           className="flex items-center gap-2 hover:underline  hover:underline-offset-4 decoration-orange-400"
-          href="/"
+          href="https://www.simplilearn.com/tutorials/blockchain-tutorial/what-is-cryptocurrency"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -73,7 +73,7 @@ export default function Home() {
             width={16}
             height={16}
           />
-          Market Analysis
+          Learn more about Cryptocurrency
         </Link>
         <Link
           className="flex items-center gap-2 hover:underline hover:underline-offset-4 decoration-orange-400"
