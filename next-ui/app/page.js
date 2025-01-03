@@ -8,7 +8,7 @@ export default function Home() {
       <HelloMsg/>
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
-          className="dark:invert"
+          className="page-logo"
           src="/infocryp.svg"
           alt="Page logo"
           width={180}

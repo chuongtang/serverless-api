@@ -27,7 +27,7 @@ const page = () => {
           <p className="text-gray-200 text-xs italic m-4 flex object-right self-end">Updated by tradingview <span className="animate-ping block h-1 w-1 rounded-full ring-2 ring-orange-400 bg-orange-200 "></span>
            </p>
         </div>
-        <iframe src="https://www.tradingview-widget.com/embed-widget/timeline/?market=crypto" width="100%" height="700px" className="m-auto shadow-lg shadow-white " allowFullScreen lazy="true" title="Crypto market news" />
+        <iframe src="https://www.tradingview-widget.com/embed-widget/timeline/?market=crypto" width="100%" height="700px" className="m-auto shadow-lg shadow-white bounce-in-bck " allowFullScreen lazy="true" title="Crypto market news" />
         <div className="flex absolute top-1/2 right-1/2 -z-10">
           <div className="h-2 w-2 mx-2 bg-orange-500 rounded-full animate-ping [animation-delay:-0.3s]">
           </div>
