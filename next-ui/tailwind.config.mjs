@@ -11,6 +11,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      backgroundImage: {
+        'cryp': "url('../public/bg.webp')",
+      },
     },
   },
   plugins: [],
