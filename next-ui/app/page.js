@@ -5,10 +5,10 @@ import HelloMsg from "./ui/HelloMsg";
 export default function Home() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <HelloMsg/>
+      <HelloMsg />
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
-          className="page-logo"
+          className="bounce-in-bottom"
           src="/infocryp.svg"
           alt="Page logo"
           width={180}
@@ -40,10 +40,25 @@ export default function Home() {
               width={20}
               height={20}
             />
-            Top trending Crypto
+            Market trend
           </Link>
           <Link
-            className="rounded-full border border-solid border-neon-carrot-900 dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44 gap-2"
+            className="rounded-full bg-[#ff9933] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44 gap-2"
+            href="/chart"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              className="dark:invert animate-spin"
+              src="/analysis.svg"
+              alt="News logomark"
+              width={20}
+              height={20}
+            />
+            Analysis charts
+          </Link>
+          <Link
+            className="rounded-full border border-solid border-[#ff9933] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44 gap-2"
             href="/news"
             target="_blank"
             rel="noopener noreferrer"
@@ -55,8 +70,9 @@ export default function Home() {
               width={10}
               height={10}
             />
-            What is hot on the news
+            Hot on the news
           </Link>
+          
         </div>
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
@@ -73,7 +89,7 @@ export default function Home() {
             width={16}
             height={16}
           />
-          Learn more about Cryptocurrency
+          About Cryptocurrency
         </Link>
         <Link
           className="flex items-center gap-2 hover:underline hover:underline-offset-4 decoration-orange-400"
