@@ -28,6 +28,7 @@ const page = () => {
            </p>
         </div>
         <iframe src="https://www.tradingview-widget.com/embed-widget/timeline/?market=crypto" width="100%" height="700px" className="m-auto shadow-lg shadow-white bounce-in-bck " allowFullScreen lazy="true" title="Crypto market news" />
+        <div className="italic text-sm mx-auto"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span className="text-orange-600 animate-pulse">Track all markets on TradingView</span></a></div>
         <div className="flex absolute top-1/2 right-1/2 -z-10">
           <div className="h-2 w-2 mx-2 bg-orange-500 rounded-full animate-ping [animation-delay:-0.3s]">
           </div>
